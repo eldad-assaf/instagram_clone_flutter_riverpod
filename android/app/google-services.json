@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "737533162128",
+    "project_id": "instagram-clone-eldad",
+    "storage_bucket": "instagram-clone-eldad.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:737533162128:android:881096599a146a747ade15",
+        "android_client_info": {
+          "package_name": "com.example.instagram_clone_eldad"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "737533162128-b7g2vtcgr96ki45o0mdmjh4sfqq8pao9.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBURX5syKGdhASGTkDqoCITRe3rRQ1W2cs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "737533162128-b7g2vtcgr96ki45o0mdmjh4sfqq8pao9.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
