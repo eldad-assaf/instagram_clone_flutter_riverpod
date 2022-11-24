@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
-import 'package:instagram_clone_eldad/state/auth/backend/authenticator.dart';
+import 'package:hooks_riverpod/hooks_riverpod.dart';
+import 'package:instagram_clone_eldad/state/auth/providers/auth_state_provider.dart';
+import 'package:instagram_clone_eldad/state/auth/providers/is_logged_in_provider.dart';
 import 'firebase_options.dart';
 import 'dart:developer' as devtools show log;
 
@@ -13,7 +15,7 @@ void main() async {
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
-  runApp(const App());
+  runApp(const ProviderScope(child: App()));
 }
 
 class App extends StatefulWidget {
@@ -37,33 +39,72 @@ class _AppState extends State<App> {
       ),
       themeMode: ThemeMode.dark,
       debugShowCheckedModeBanner: false,
-      home: const HomePage(),
+      home: Consumer(
+        builder: (context, ref, child) {
+          return ref.watch(isLoggedInProvider) == true
+              ? const MainView()
+              : const LoginView();
+        },
+      ),
     );
   }
 }
 
-class HomePage extends StatefulWidget {
-  const HomePage({super.key});
+class MainView extends StatefulWidget {
+  const MainView({super.key});
 
   @override
-  State<HomePage> createState() => _HomePageState();
+  State<MainView> createState() => _MainViewState();
 }
 
-class _HomePageState extends State<HomePage> {
+class _MainViewState extends State<MainView> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Home Page'),
+        title: const Text('Main View'),
       ),
       body: Column(
         children: [
-          TextButton(
-              onPressed: () async {
-                final result = await const Authenticator().loginWithGoogle();
-                result.log();
-              },
-              child: const Text('Sign in with google'))
+          Consumer(
+            builder: (context, ref, child) {
+              return TextButton(
+                  onPressed: () async {
+                    await ref.read(authStateProvider.notifier).logOut();
+                  },
+                  child: const Text('Sign out'));
+            },
+          )
+        ],
+      ),
+    );
+  }
+}
+
+class LoginView extends StatelessWidget {
+  const LoginView({
+    Key? key,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('Login Page'),
+      ),
+      body: Column(
+        children: [
+          Consumer(
+            builder: (context, ref, child) {
+              return TextButton(
+                  onPressed: () async {
+                    await ref
+                        .read(authStateProvider.notifier)
+                        .loginWithGoogle();
+                  },
+                  child: const Text('Sign in with google'));
+            },
+          )
         ],
       ),
     );
