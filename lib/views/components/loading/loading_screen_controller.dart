@@ -8,7 +8,8 @@ class LoadingScreenController {
   final CloseLoadingScreen close;
   final UpdateLoadingScreen update;
 
-  const LoadingScreenController({required this.close, required this.update});
-
-  
+  const LoadingScreenController({
+    required this.close,
+    required this.update,
+  });
 }

@@ -2,7 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:instagram_clone_eldad/state/auth/providers/auth_state_provider.dart';
+import 'package:instagram_clone_eldad/state/providers/is_loading_provider.dart';
 import 'package:instagram_clone_eldad/state/auth/providers/is_logged_in_provider.dart';
+import 'package:instagram_clone_eldad/views/components/loading/loading_screen.dart';
 import 'firebase_options.dart';
 import 'dart:developer' as devtools show log;
 
@@ -41,6 +43,15 @@ class _AppState extends State<App> {
       debugShowCheckedModeBanner: false,
       home: Consumer(
         builder: (context, ref, child) {
+          // takes care of displaying the loading screen
+          ref.listen<bool>(isLoadingProvider, (_, isLoading) {
+            if (isLoading) {
+              LoadingScreen.instance().show(context: context);
+            } else {
+              LoadingScreen.instance().hide();
+            }
+          });
+
           return ref.watch(isLoggedInProvider) == true
               ? const MainView()
               : const LoginView();
