@@ -51,7 +51,6 @@ class _AppState extends State<App> {
               LoadingScreen.instance().hide();
             }
           });
-
           return ref.watch(isLoggedInProvider) == true
               ? const MainView()
               : const LoginView();
