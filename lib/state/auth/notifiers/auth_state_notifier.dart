@@ -34,7 +34,6 @@ class AuthStateNotifier extends StateNotifier<AuthState> {
       isLoading: false,
       userId: _authenticator.userId,
     );
-    print(state);
   }
 
   Future<void> saveUserInfo({required UserId userId}) =>

@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:instagram_clone_eldad/views/components/rich_text/base_text.dart';
-import 'package:instagram_clone_eldad/views/components/rich_text/rich_text_widget.dart';
-
+import 'package:url_launcher/url_launcher.dart';
+import '../components/rich_text/base_text.dart';
+import '../components/rich_text/rich_text_widget.dart';
 import '../constants/strings.dart';
 
-class LoginViewSignupLink extends StatelessWidget {
-  const LoginViewSignupLink({super.key});
+class LoginViewSignupLinks extends StatelessWidget {
+  const LoginViewSignupLinks({
+    Key? key,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -21,8 +23,10 @@ class LoginViewSignupLink extends StatelessWidget {
         BaseText.link(
           text: Strings.facebook,
           onTapped: () {
-            Uri.parse(
-              Strings.facebookSignupUrl,
+            launchUrl(
+              Uri.parse(
+                Strings.facebookSignupUrl,
+              ),
             );
           },
         ),
@@ -32,11 +36,13 @@ class LoginViewSignupLink extends StatelessWidget {
         BaseText.link(
           text: Strings.google,
           onTapped: () {
-            Uri.parse(
-              Strings.googleSignupUrl,
+            launchUrl(
+              Uri.parse(
+                Strings.googleSignupUrl,
+              ),
             );
           },
-        )
+        ),
       ],
     );
   }

@@ -8,6 +8,8 @@ import 'package:instagram_clone_eldad/views/components/loading/loading_screen.da
 import 'firebase_options.dart';
 import 'dart:developer' as devtools show log;
 
+import 'views/login/login_view.dart';
+
 extension Log on Object {
   void log() => devtools.log(toString());
 }
@@ -83,36 +85,6 @@ class _MainViewState extends State<MainView> {
                     await ref.read(authStateProvider.notifier).logOut();
                   },
                   child: const Text('Sign out'));
-            },
-          )
-        ],
-      ),
-    );
-  }
-}
-
-class LoginView extends StatelessWidget {
-  const LoginView({
-    Key? key,
-  }) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text('Login Page'),
-      ),
-      body: Column(
-        children: [
-          Consumer(
-            builder: (context, ref, child) {
-              return TextButton(
-                  onPressed: () async {
-                    await ref
-                        .read(authStateProvider.notifier)
-                        .loginWithGoogle();
-                  },
-                  child: const Text('Sign in with google'));
             },
           )
         ],
