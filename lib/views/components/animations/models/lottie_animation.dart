@@ -4,6 +4,7 @@ enum LottieAnimation {
   loading(name: 'loading'),
   error(name: 'error'),
   smallError(name: 'small_error');
+  
 
   final String name;
   const LottieAnimation({
