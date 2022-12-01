@@ -5,6 +5,7 @@ import 'package:instagram_clone_eldad/state/auth/providers/auth_state_provider.d
 import 'package:instagram_clone_eldad/state/providers/is_loading_provider.dart';
 import 'package:instagram_clone_eldad/state/auth/providers/is_logged_in_provider.dart';
 import 'package:instagram_clone_eldad/views/components/loading/loading_screen.dart';
+import 'package:instagram_clone_eldad/views/main/main_view.dart';
 import 'firebase_options.dart';
 import 'dart:developer' as devtools show log;
 
@@ -57,37 +58,6 @@ class _AppState extends State<App> {
               ? const MainView()
               : const LoginView();
         },
-      ),
-    );
-  }
-}
-
-class MainView extends StatefulWidget {
-  const MainView({super.key});
-
-  @override
-  State<MainView> createState() => _MainViewState();
-}
-
-class _MainViewState extends State<MainView> {
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text('Main View'),
-      ),
-      body: Column(
-        children: [
-          Consumer(
-            builder: (context, ref, child) {
-              return TextButton(
-                  onPressed: () async {
-                    await ref.read(authStateProvider.notifier).logOut();
-                  },
-                  child: const Text('Sign out'));
-            },
-          )
-        ],
       ),
     );
   }
