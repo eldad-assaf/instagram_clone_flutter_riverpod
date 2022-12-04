@@ -2,7 +2,6 @@ import 'dart:async';
 
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
-
 import '../../auth/providers/user_id_provider.dart';
 import '../../constants/firebase_collection_name.dart';
 import '../../constants/firebase_field_name.dart';

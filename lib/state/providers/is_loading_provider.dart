@@ -4,6 +4,7 @@ import 'package:instagram_clone_eldad/state/auth/providers/auth_state_provider.d
 final isLoadingProvider = Provider<bool>(
   (ref) {
     final authState = ref.watch(authStateProvider);
+  
     return authState.isLoading;
   },
 );
