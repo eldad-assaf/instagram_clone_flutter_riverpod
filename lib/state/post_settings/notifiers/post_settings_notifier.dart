@@ -1,6 +1,6 @@
-//import 'package:hooks_riverpod/hooks_riverpod.dart';
+import 'package:hooks_riverpod/hooks_riverpod.dart';
 
-// class PostSettingNotifier extends StateNotifier<> {
+class PostSettingNotifier extends StateNotifier<> {
 
 
-// }
+}
