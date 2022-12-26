@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:instagram_clone_eldad/views/components/post/post_thumbnail_view.dart';
-import 'package:instagram_clone_eldad/views/post_comments/post_comments_view.dart';
 import '../../../state/posts/models/post.dart';
 
 class PostsGridView extends StatelessWidget {
