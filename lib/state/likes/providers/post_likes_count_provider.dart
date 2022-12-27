@@ -5,8 +5,6 @@ import 'package:instagram_clone_eldad/state/constants/firebase_collection_name.d
 import 'package:instagram_clone_eldad/state/constants/firebase_field_name.dart';
 import '../../posts/typedefs/post_id.dart';
 
-
-
 final postLikesCountProvider = StreamProvider.family.autoDispose<int, PostId>(
   (
     ref,
