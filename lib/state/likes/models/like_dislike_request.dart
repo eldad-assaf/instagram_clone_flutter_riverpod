@@ -1,12 +1,13 @@
 import 'package:flutter/foundation.dart' show immutable;
-import 'package:instagram_clone_eldad/state/posts/typedefs/user_id.dart';
-
 import '../../posts/typedefs/post_id.dart';
+import '../../posts/typedefs/user_id.dart';
 
 @immutable
-class LikesDislikeRequest {
+class LikeDislikeRequest {
   final PostId postId;
   final UserId likedBy;
-
-  const LikesDislikeRequest({required this.postId, required this.likedBy});
+  const LikeDislikeRequest({
+    required this.postId,
+    required this.likedBy,
+  });
 }

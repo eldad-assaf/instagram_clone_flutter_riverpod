@@ -9,7 +9,7 @@ import 'package:instagram_clone_eldad/state/likes/models/like.dart';
 import 'package:instagram_clone_eldad/state/likes/models/like_dislike_request.dart';
 
 final likeDislikePostProvider =
-    FutureProvider.family.autoDispose<bool, LikesDislikeRequest>(
+    FutureProvider.family.autoDispose<bool, LikeDislikeRequest>(
   (ref, request) async {
     final query = FirebaseFirestore.instance
         .collection(FirebaseCollectionName.likes)
