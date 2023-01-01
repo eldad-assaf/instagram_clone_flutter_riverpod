@@ -18,10 +18,8 @@ class SearchGridView extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     if (searchTerm.isEmpty) {
-      return const SliverToBoxAdapter(
-        child: EmptyContentsWithTextAnimationView(
-          text: Strings.enterYourSearchTerm,
-        ),
+      return const EmptyContentsWithTextAnimationView(
+        text: Strings.enterYourSearchTerm,
       );
     }
 
@@ -34,25 +32,20 @@ class SearchGridView extends ConsumerWidget {
     return posts.when(
       data: (posts) {
         if (posts.isEmpty) {
-          return const SliverToBoxAdapter(
-            child: DataNotFoundAnimationView(),
-          );
+          return const DataNotFoundAnimationView();
         } else {
-          return PostsGridView(  // diffrent from github // sliver on git
+          return PostsGridView(
+            // diffrent from github // sliver on git
             posts: posts,
           );
         }
       },
       error: (error, stackTrace) {
-        return const SliverToBoxAdapter(
-          child: ErrorAnimationView(),
-        );
+        return const ErrorAnimationView();
       },
       loading: () {
-        return const SliverToBoxAdapter(
-          child: Center(
-            child: CircularProgressIndicator(),
-          ),
+        return const Center(
+          child: CircularProgressIndicator(),
         );
       },
     );

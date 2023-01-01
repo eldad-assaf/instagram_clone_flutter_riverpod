@@ -9,6 +9,7 @@ import 'package:instagram_clone_eldad/state/post_settings/providers/post_setting
 import 'package:instagram_clone_eldad/views/components/dialogs/alert_dialog_model.dart';
 import 'package:instagram_clone_eldad/views/components/dialogs/log_out_dialog.dart';
 import 'package:instagram_clone_eldad/views/create_new_post/create_new_post_view.dart';
+import 'package:instagram_clone_eldad/views/tabs/search/search_view.dart';
 import 'package:instagram_clone_eldad/views/tabs/user_posts/user_posts_view.dart';
 
 import '../../state/image_upload/helpers/image_picker_helper.dart';
@@ -115,7 +116,7 @@ class _MainViewState extends ConsumerState<MainView> {
           ]),
         ),
         body: const TabBarView(
-          children: [UserPostsView(), UserPostsView(), UserPostsView()],
+          children: [UserPostsView(), SearchView(), UserPostsView()],
         ),
       ),
     );
