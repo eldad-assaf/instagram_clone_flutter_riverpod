@@ -3,7 +3,6 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:instagram_clone_eldad/state/constants/firebase_field_name.dart';
 import 'package:instagram_clone_eldad/state/posts/models/post.dart';
-
 import '../../constants/firebase_collection_name.dart';
 import '../typedefs/search_term.dart';
 
