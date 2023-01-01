@@ -12,21 +12,25 @@ class SearchView extends HookConsumerWidget {
     final controller = useTextEditingController();
     final searchTerm = useState('');
 
-    useEffect(() {
-      controller.addListener(() {
-        searchTerm.value = controller.text.trim();
-      });
-      return () {};
-    }, [controller]); // 17:09:18
+    useEffect(
+      () {
+        controller.addListener(() {
+          searchTerm.value = controller.text;
+        });
+        return () {};
+      },
+      [controller],
+    );
 
-    return Column(
-      children: [
-        Padding(
-          padding: const EdgeInsets.all(8.0),
-          child: TextField(
-            controller: controller,
-            textInputAction: TextInputAction.search,
-            decoration: InputDecoration(
+    return CustomScrollView(
+      slivers: [
+        SliverToBoxAdapter(
+          child: Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: TextField(
+              controller: controller,
+              textInputAction: TextInputAction.search,
+              decoration: InputDecoration(
                 labelText: Strings.enterYourSearchTermHere,
                 suffixIcon: IconButton(
                   icon: const Icon(Icons.clear),
@@ -34,12 +38,14 @@ class SearchView extends HookConsumerWidget {
                     controller.clear();
                     dismissKeyboard();
                   },
-                )),
+                ),
+              ),
+            ),
           ),
         ),
-        Expanded(
-          child: SearchGridView(searchTerm: searchTerm.value),
-        )
+        SearchGridView(
+          searchTerm: searchTerm.value,
+        ),
       ],
     );
   }
