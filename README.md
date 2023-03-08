@@ -8,8 +8,9 @@ Our state management with Riverpod and clean architecture ensures that the app r
 
 Some of the main features of Flutter Instagram Clone include:
 
-*Ability to upload images and videos
-*Commenting and liking functionality with the ability to control permissions
+* Ability to upload images and videos
+
+* Commenting and liking functionality with the ability to control permissions
 *Google Sign-In for easy authentication
 *Search functionality to find posts quickly
 *Streamlined state management with Riverpod
