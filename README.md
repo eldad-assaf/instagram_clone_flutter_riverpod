@@ -22,5 +22,6 @@ Whether you're an aspiring developer or just interested in seeing how state mana
   <img src="login-screen.png" alt="" width="300" />
   <img src="main-screen.png" alt="" width="300" />
   <img src="new-post-screen.png" alt="" width="300" />
-
+  <img src="search-screen-1.png" alt="" width="300" />
+  <img src="search-screen-2.png" alt="" width="300" />
 </p>
