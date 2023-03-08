@@ -19,8 +19,8 @@ Lottie animations for a visually appealing user experience
 Whether you're an aspiring developer or just interested in seeing how state management, Firebase Firestore, Google Sign-In, and permissions management work together in Flutter, Flutter Instagram Clone is the perfect app to demonstrate my skills and provide a fun and engaging user experience.
 
 <p float="left">
-  <img src="here.png" alt="" width="300" />
-  <img src="here.png" alt="" width="300" />
-  <img src="here.png" alt="" width="300" />
+  <img src="login-screen.png" alt="" width="300" />
+  <img src="main-screen.png" alt="" width="300" />
+  <img src="new-post-screen.png" alt="" width="300" />
 
 </p>
