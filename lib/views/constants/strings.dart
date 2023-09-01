@@ -11,6 +11,7 @@ class Strings {
   static const enterYourSearchTerm =
       'Enter your search term in order go get started. You can search in the description of all posts available in the system';
   static const facebook = 'Facebook';
+
   static const facebookSignupUrl = 'https://www.facebook.com/signup';
   static const google = 'Google';
   static const googleSignupUrl = 'https://accounts.google.com/signup';
@@ -32,7 +33,11 @@ class Strings {
 
   // login view rich text at bottom
   static const dontHaveAnAccount = "Don't have an account?\n";
-  static const signUpOn = 'Sign up on ';
+  static const pleaseReviewOur = 'Please review our ';
+  static const termsAndConditions = 'Terms and conditions ';
+  static const andOur = 'and our ';
+  static const privacyPolicy = 'privacy policy';
+
   static const orCreateAnAccountOn = ' or create an account on ';
   const Strings._();
 }
